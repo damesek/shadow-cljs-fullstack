@@ -30,15 +30,17 @@
                  [kibu/pushy "0.3.8"]]
 
   :min-lein-version "2.6.1"
+  :plugins [[lein-shell "0.5.0"]]
 
   :source-paths ["src/clj" "src/cljs" "src/cljc" "src/css"]
-  :test-paths ["test/clj" "test/cljc"]
+  :test-paths ["test/clj" "test/cljc"]  
   :clean-targets ^{:protect false} [:target-path :compile-path "resources/public/js" "node_modules"]
 
   :uberjar-name "shadow-clj-fullstack.jar"
   :main shadow-clj-fullstack.main
 
   :aliases {"js-watch" ["run" "-m" "shadow.cljs.devtools.clj" "watch" "app"]
+            "npm-install" ["shell" "npm" "install"]
             "js-build" ["run" "-m" "shadow.cljs.devtools.clj" "build" "app"]}
 
   :profiles {:dev     {:repl-options {:init-ns user}
@@ -49,4 +51,4 @@
              :uberjar {:aot          :all
                        :omit-source  true
                        :dependencies [[garden-gnome "0.1.0"]]
-                       :prep-tasks   ["compile" "js-build" "css-build"]}})
+                       :prep-tasks   ["npm-shell" "compile" "js-build"]}}) ;"css-build" is not a task now
