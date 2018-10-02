@@ -51,4 +51,4 @@
              :uberjar {:aot          :all
                        :omit-source  true
                        :dependencies [[garden-gnome "0.1.0"]]
-                       :prep-tasks   ["npm-shell" "compile" "js-build"]}}) ;"css-build" is not a task now
+                       :prep-tasks   ["npm-install" "compile" "js-build"]}}) ;"css-build" is not a task now
