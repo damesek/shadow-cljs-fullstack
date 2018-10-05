@@ -10,7 +10,9 @@
        [:title (get meta-info :title "Shadow Full Stack")]
        [:meta {:charset "UTF-8"}]
        (h/include-css "https://unpkg.com/normalize.css@7.0.0")
-       (h/include-css "https://unpkg.com/@blueprintjs/core@3.3.0/lib/css/blueprint.css")
+       (h/include-css "https://unpkg.com/@blueprintjs/core@3.6.1/lib/css/blueprint.css") 
+       ;; "_from": "@blueprintjs/core@^3.3.0",
+       ;; --->>>> "_id": "@blueprintjs/core@3.6.1" :: for me not worked with 3.3.0
        (h/include-css "https://unpkg.com/@blueprintjs/icons@3.1.0/lib/css/blueprint-icons.css")
        [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
        [:link {:rel "stylesheet" :href "/css/screen.css"}]]
